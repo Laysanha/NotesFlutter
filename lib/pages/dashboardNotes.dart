@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:notes_flutter/constants/app_styles.dart';
+import 'package:notes_flutter/pages/newNotes.dart';
 
 class DashboardNotes extends StatefulWidget {
   const DashboardNotes({super.key});
@@ -46,14 +47,23 @@ class _DashboardNotesState extends State<DashboardNotes> {
           ),
         ],
       ),
+
       body: const Center(),
+
       floatingActionButton:
         SizedBox(
           width: 75,
           height: 75,
           child: FloatingActionButton(
             backgroundColor: ColorStyle.primaryBlack,
-            onPressed: () {  },
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => const NewNotes(),
+                )
+              );
+            },
             shape: const CircleBorder(),
             child: const Icon(
               CupertinoIcons.plus,
@@ -61,7 +71,7 @@ class _DashboardNotesState extends State<DashboardNotes> {
               color: ColorStyle.lightGray,
             ),
           ),
-      )
+        )
     );
   }
 }

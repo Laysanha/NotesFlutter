@@ -14,55 +14,48 @@ class _DashboardNotesState extends State<DashboardNotes> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title:
-        const Text(
-          "Notes",
-          style: TextStyle(
-            fontSize: FontSizeStyle.title,
-            fontWeight: FontWeight.bold
+        appBar: AppBar(
+          title: const Text(
+            'Notes',
+            style: TextStyle(
+                fontSize: FontSizeStyle.title, fontWeight: FontWeight.bold),
           ),
-        ),
-        actions: [
-          Padding(
-            padding: const EdgeInsets.only(right: 16.0),
-            child: SizedBox(
-              width: 50,
-              height: 50,
-              child: TextButton(
-                onPressed: () => {},
-                style: TextButton.styleFrom(
-                  backgroundColor: ColorStyle.lightSkyBlue,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(14.0),
+          actions: [
+            Padding(
+              padding: const EdgeInsets.only(right: 16.0),
+              child: SizedBox(
+                width: 50,
+                height: 50,
+                child: TextButton(
+                  onPressed: () => {},
+                  style: TextButton.styleFrom(
+                    backgroundColor: ColorStyle.lightSkyBlue,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(14.0),
+                    ),
+                    padding: EdgeInsets.zero,
                   ),
-                  padding: EdgeInsets.zero,
-                ),
-                child: const Icon(
-                  CupertinoIcons.search,
-                  color: ColorStyle.primaryBlue,
+                  child: const Icon(
+                    CupertinoIcons.search,
+                    color: ColorStyle.primaryBlue,
+                  ),
                 ),
               ),
             ),
-          ),
-        ],
-      ),
-
-      body: const Center(),
-
-      floatingActionButton:
-        SizedBox(
+          ],
+        ),
+        body: const Center(),
+        floatingActionButton: SizedBox(
           width: 75,
           height: 75,
           child: FloatingActionButton(
             backgroundColor: ColorStyle.primaryBlack,
             onPressed: () {
               Navigator.push(
-                context,
-                MaterialPageRoute(
+                  context,
+                  MaterialPageRoute(
                     builder: (context) => const NewNotes(),
-                )
-              );
+                  ));
             },
             shape: const CircleBorder(),
             child: const Icon(
@@ -71,7 +64,6 @@ class _DashboardNotesState extends State<DashboardNotes> {
               color: ColorStyle.lightGray,
             ),
           ),
-        )
-    );
+        ));
   }
 }

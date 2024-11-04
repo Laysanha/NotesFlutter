@@ -1,5 +1,6 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:notes_flutter/constants/app_styles.dart';
 import 'package:notes_flutter/pages/dashboardNotes.dart';
 
 import 'firebase_options.dart';
@@ -23,10 +24,13 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
-        fontFamily: 'Poppins'
+        fontFamily: 'Poppins',
+        scaffoldBackgroundColor: ColorStyle.lightGray,
+        appBarTheme: const AppBarTheme(
+          backgroundColor: ColorStyle.lightGray,
+        ),
       ),
       home: const DashboardNotes(),
     );
   }
 }
-

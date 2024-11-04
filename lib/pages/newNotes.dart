@@ -40,7 +40,9 @@ class _NewNotesState extends State<NewNotes> {
       Navigator.pop(context);
     } else {
       ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text("Por favor! Preencha os campos!")),
+        const SnackBar(
+          content: Text('Por favor! Preencha os campos!'),
+        ),
       );
     }
   }

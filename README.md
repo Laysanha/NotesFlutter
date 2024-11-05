@@ -1,16 +1,35 @@
-# notes_flutter
+# Flutter Notes App
 
-Notes and firebase connection.
+## Descrição
 
-## Getting Started
+O **Flutter Notes App** é um aplicativo simples de anotações desenvolvido em Flutter. O objetivo é permitir que os usuários criem, visualizem e gerenciem suas notas de forma eficiente e intuitiva.
 
-This project is a starting point for a Flutter application.
+## Recursos
 
-A few resources to get you started if this is your first Flutter project:
+- **Criação de notas**: Os usuários podem criar notas com títulos e conteúdos.
+- **Armazenamento no Firebase**: As notas são armazenadas em tempo real no Firebase Firestore.
+- **Interface amigável**: A aplicação possui uma interface limpa e fácil de usar.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Tecnologias Utilizadas
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- **Flutter**: Framework para construção de interfaces nativas multiplataforma.
+- **Firebase Firestore**: Serviço de banco de dados em tempo real para armazenamento das notas.
+- **Dart**: Linguagem de programação utilizada para desenvolvimento do aplicativo.
+
+## Instalação
+
+Para rodar o aplicativo localmente, siga os passos abaixo:
+
+1. Clone o repositório:
+   ```bash
+   git clone https://github.com/seuusuario/flutter_notes_app.git
+   ```
+2. Navegue até o diretório do projeto:
+   ```bash
+   cd flutter_notes
+   ```
+ 3. Instale as dependências:
+ ```bash
+ flutter pub get
+ ```
+

@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:notes_flutter/constants/app_styles.dart';
 import 'package:notes_flutter/models/note.dart';
 
@@ -83,19 +84,6 @@ class _NewNotesState extends State<NewNotes> {
                 ),
               ),
             ),
-
-            // TextButton(
-            //   onPressed: () {
-            //     Navigator.of(context).pop();
-            //   },
-            //   child: const Text(
-            //     'Cancelar',
-            //     style: TextStyle(
-            //       color: ColorStyle.lightSkyBlue,
-            //       fontSize: FontSizeStyle.medium,
-            //     ),
-            //   ),
-            // ),
           ],
         );
       },
@@ -174,45 +162,54 @@ class _NewNotesState extends State<NewNotes> {
           ),
         ],
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            TextField(
-              controller: _titleController,
-              decoration: const InputDecoration(
-                  floatingLabelBehavior: FloatingLabelBehavior.auto,
-                  border: InputBorder.none,
-                  labelText: 'Título',
-                  labelStyle: TextStyle(
-                      fontSize: FontSizeStyle.title,
-                      fontWeight: FontWeight.bold,
-                      color: ColorStyle.primaryBlack)),
-              style: const TextStyle(
-                fontSize: FontSizeStyle.large,
-                fontWeight: FontWeight.bold,
+      body: GestureDetector(
+        onTap: () => FocusScope.of(context).unfocus(),
+        child: SingleChildScrollView(
+          padding: EdgeInsets.all(16.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              SizedBox(
+                width: MediaQuery.of(context).size.width * 0.9,
+                child: TextField(
+                  controller: _titleController,
+                  maxLines: null,
+                  decoration: const InputDecoration(
+                      floatingLabelBehavior: FloatingLabelBehavior.never,
+                      border: InputBorder.none,
+                      labelText: 'Título',
+                      labelStyle: TextStyle(
+                          fontSize: FontSizeStyle.title,
+                          fontWeight: FontWeight.bold,
+                          color: ColorStyle.primaryBlack)),
+                  style: const TextStyle(
+                    fontSize: FontSizeStyle.title,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
               ),
-            ),
-            const SizedBox(height: 10),
-            TextField(
-              controller: _contentController,
-              maxLines: 14,
-              decoration: const InputDecoration(
-                  floatingLabelBehavior: FloatingLabelBehavior.auto,
-                  alignLabelWithHint: true,
-                  border: InputBorder.none,
-                  labelText: 'Digite algo...',
-                  labelStyle: TextStyle(
-                      fontSize: FontSizeStyle.large,
-                      fontWeight: FontWeight.normal,
-                      color: ColorStyle.primaryBlack)),
-              style: const TextStyle(
-                fontSize: FontSizeStyle.large,
-                fontWeight: FontWeight.normal,
+              SizedBox(
+                width: MediaQuery.of(context).size.width * 0.9,
+                child: TextField(
+                  controller: _contentController,
+                  maxLines: null,
+                  decoration: const InputDecoration(
+                      floatingLabelBehavior: FloatingLabelBehavior.never,
+                      alignLabelWithHint: true,
+                      border: InputBorder.none,
+                      labelText: 'Digite algo...',
+                      labelStyle: TextStyle(
+                          fontSize: FontSizeStyle.large,
+                          fontWeight: FontWeight.normal,
+                          color: ColorStyle.primaryBlack)),
+                  style: const TextStyle(
+                    fontSize: FontSizeStyle.large,
+                    fontWeight: FontWeight.normal,
+                  ),
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );

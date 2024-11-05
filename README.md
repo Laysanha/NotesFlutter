@@ -29,7 +29,23 @@ Para rodar o aplicativo localmente, siga os passos abaixo:
    cd flutter_notes
    ```
  3. Instale as dependências:
- ```bash
- flutter pub get
- ```
+      ```bash
+      flutter pub get
+      ```
+## Configure o Firebase:
+- Crie um projeto no Firebase Console.
+- Adicione o aplicativo e siga as instruções para configuração.
+      ```bash
+      flutter run
+      ```
 
+## Uso
+- Ao abrir o aplicativo, você verá a tela inicial com um botão para adicionar novas notas.
+- Clique no botão para criar uma nova nota.
+- Preencha o título e o conteúdo da nota.
+- Salve a nota e veja-a listada na tela principal.
+
+## Contato
+- Autor: Laysa Santiago Alfredo
+- Email: laysatb@gmail.com
+- GitHub: laysanha

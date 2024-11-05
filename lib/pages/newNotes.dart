@@ -22,6 +22,104 @@ class _NewNotesState extends State<NewNotes> {
     });
   }
 
+  Future<void> _showConfirmeDialog() {
+    return showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          backgroundColor: ColorStyle.primaryBlack,
+          title: const Row(
+            children: [
+              Icon(
+                Icons.warning_amber_rounded,
+                color: ColorStyle.statusOrange,
+              ),
+              SizedBox(width: 8),
+              Text(
+                'Deseja salvar a nota?',
+                style: TextStyle(
+                  color: ColorStyle.lightSkyBlue,
+                  fontSize: FontSizeStyle.large,
+                ),
+              ),
+            ],
+          ),
+          actions: [
+            ElevatedButton(
+              onPressed: () {
+                Navigator.of(context).pop();
+                _saveNote();
+              },
+              style: OutlinedButton.styleFrom(
+                side: const BorderSide(color: ColorStyle.primaryBlue),
+                backgroundColor: Colors.transparent,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(5),
+                ),
+              ),
+              child: const Text(
+                'Salvar',
+                style: TextStyle(
+                  color: ColorStyle.lightSkyBlue,
+                  fontSize: FontSizeStyle.medium,
+                ),
+              ),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+              style: ElevatedButton.styleFrom(
+                backgroundColor: ColorStyle.primaryBlue,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(5),
+                ),
+              ),
+              child: const Text(
+                'Cancelar',
+                style: TextStyle(
+                  color: ColorStyle.lightSkyBlue,
+                  fontSize: FontSizeStyle.medium,
+                ),
+              ),
+            ),
+
+            // TextButton(
+            //   onPressed: () {
+            //     Navigator.of(context).pop();
+            //   },
+            //   child: const Text(
+            //     'Cancelar',
+            //     style: TextStyle(
+            //       color: ColorStyle.lightSkyBlue,
+            //       fontSize: FontSizeStyle.medium,
+            //     ),
+            //   ),
+            // ),
+          ],
+        );
+      },
+    );
+  }
+
+  Future<void> _showResultDialog(String message) async {
+    return showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          content: Text(message),
+          actions: [
+            TextButton(
+                onPressed: () {
+                  Navigator.of(context).pop();
+                },
+                child: Text('OK')),
+          ],
+        );
+      },
+    );
+  }
+
   Future<void> _saveNote() async {
     if (_titleController.text.isNotEmpty &&
         _contentController.text.isNotEmpty) {
@@ -59,7 +157,7 @@ class _NewNotesState extends State<NewNotes> {
               width: 50,
               height: 50,
               child: TextButton(
-                onPressed: _saveNote,
+                onPressed: _showConfirmeDialog,
                 style: TextButton.styleFrom(
                   backgroundColor: ColorStyle.lightSkyBlue,
                   shape: RoundedRectangleBorder(

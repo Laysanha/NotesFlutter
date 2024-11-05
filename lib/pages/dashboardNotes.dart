@@ -33,7 +33,6 @@ class _DashboardNotesState extends State<DashboardNotes> {
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(14.0),
                     ),
-                    padding: EdgeInsets.zero,
                   ),
                   child: const Icon(
                     CupertinoIcons.search,

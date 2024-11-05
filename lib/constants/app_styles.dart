@@ -17,7 +17,7 @@ class ColorStyle {
   static const Color primaryBlack = Color(0xFF181818);
 
   //Status
-  static const Color statusOrange = Color(0xFF181818);
-  static const Color statusRed = Color(0xFF181818);
-  static const Color statusGreen = Color(0xFF181818);
+  static const Color statusOrange = Color(0xFFEC5E13);
+  static const Color statusRed = Color(0xFFEC2C13);
+  static const Color statusGreen = Color(0xFF1BA434);
 }
